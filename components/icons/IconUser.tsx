@@ -12,7 +12,15 @@ interface IconProps {
 
 const IconUser = forwardRef<SVGSVGElement, IconProps>(
   (
-    { size = 20, style, title, className, ariaHidden = false, strokeWidth = 2 },
+    {
+      size = 20,
+      style,
+      title,
+      className,
+      ariaHidden = false,
+      strokeWidth = 2,
+      ...props
+    },
     ref,
   ) => (
     <svg
@@ -36,6 +44,7 @@ const IconUser = forwardRef<SVGSVGElement, IconProps>(
         } as React.CSSProperties
       }
       {...(ariaHidden && { "aria-hidden": ariaHidden })}
+      {...props}
     >
       {title && <title>{title}</title>}
       <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />

@@ -10,7 +10,7 @@ interface LogoSvgProps {
 }
 
 const LogoSvg = forwardRef<SVGSVGElement, LogoSvgProps>(
-  ({ size = 60, title, fill = "#4D6850", style, className }, ref) => (
+  ({ size = 60, title, fill = "#4D6850", style, className, ...props }, ref) => (
     <svg
       ref={ref}
       xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +27,7 @@ const LogoSvg = forwardRef<SVGSVGElement, LogoSvgProps>(
           ...style,
         } as React.CSSProperties
       }
+      {...props}
     >
       {title && <title>{title}</title>}
       <path

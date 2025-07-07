@@ -12,7 +12,15 @@ interface IconProps {
 
 const IconShoppingCart = forwardRef<SVGSVGElement, IconProps>(
   (
-    { size = 20, style, title, className, ariaHidden = false, strokeWidth = 2 },
+    {
+      size = 20,
+      style,
+      title,
+      className,
+      ariaHidden = false,
+      strokeWidth = 2,
+      ...props
+    },
     ref,
   ) => (
     <svg
@@ -36,6 +44,7 @@ const IconShoppingCart = forwardRef<SVGSVGElement, IconProps>(
         } as React.CSSProperties
       }
       {...(ariaHidden && { "aria-hidden": ariaHidden })}
+      {...props}
     >
       {title && <title>{title}</title>}
       <circle cx="8" cy="21" r="1" />
