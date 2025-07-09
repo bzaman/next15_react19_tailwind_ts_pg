@@ -10,7 +10,7 @@ import {
   DropdownMenuContent,
   DropdownMenuCheckboxItem,
 } from "@/components/ui/dropdown-menu";
-import { SunIcon, MoonIcon, SunMoon, Moon } from "lucide-react";
+import { SunIcon, MoonIcon, SunMoon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function ThemeToggle() {
